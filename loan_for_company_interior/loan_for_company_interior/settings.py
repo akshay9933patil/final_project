@@ -43,6 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'admin_app',
+    'application_generation',
+    'customer',
+    'disburstment',
+    'document_verification',
+    'loan_sanctioning'
 ]
 
 MIDDLEWARE = [
