@@ -2,11 +2,12 @@ from django.db import models
 from admin_app.models import User
 
 MARITAL_STATUS = [('Married','Married'), ('Unmarried', 'Unmarried'), ('Divorse', 'Divorse')]
-EMPLOYMENT_CHOICE = [('','')]
-BUSINESS_TYPE = [('','')]
-APPLICATION_STATUS = [('','')]
+EMPLOYMENT_CHOICE = [('Self_employed','Self_employed'), ('Private', 'Private')]
+BUSINESS_TYPE = [('Sole','Sole'), ('Partnership','Partnership'), ('Corporation','Corporation')]
+APPLICATION_STATUS = [('Inprocess','Inprocess'), ('Approved', 'Approved'), ('Rejected', 'Rejected')]
 GENDER_CHOICES = [('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')]
-BUSINESS_constitution = [('','')]
+BUSINESS_constitution = [('Private_limited','Private_limited'), ('Public_limited','Public_limited'), ('Partnership','Partnership'), ('One_person_companies','One_person_companies')]
+
 
 
 # Create your models here.
@@ -45,7 +46,7 @@ class Application(models.Model):
     remark = models.CharField(max_length=250, default=0, blank=True)
 
     def __str__(self):
-        return f"{self.id}"
+        return f"{self.id}, {self.user}, {self.aadhaar_no}"
 
     
 

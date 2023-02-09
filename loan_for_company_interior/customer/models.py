@@ -1,6 +1,6 @@
 from django.db import models
 
-ENQUIRY_STATUS = [('pending', 'Pending'), ('inquiry successful', 'inquiry successful'), ('rejected', 'rejected')]
+ENQUIRY_STATUS = [('pending', 'Pending'), ('Successful', 'Successful'), ('rejected', 'rejected')]
 
 # Create your models here.
 class Enquiry(models.Model):

@@ -4,10 +4,10 @@ from application_generation.models import Application
 from django.contrib.auth.models import User
 
 INSTALLMENT_CHOICES = [('Pending', 'pending')]
-PAYMENT_CHOICES = [('','')]
-DISBURSEMENT_CHOICES = [('','')]
-BUSINESS_TYPE = [('','')]
-BUSINESS_constitution = [('','')]
+PAYMENT_CHOICES = [('Cash','Cash'), ('Cheque','Cheque'), ('UPI','UPI')]
+DISBURSEMENT_CHOICES = [('In_process','In_process'), ('Pending', 'Pending')]
+BUSINESS_TYPE = [('Sole','Sole'), ('Partnership','Partnership'), ('Corporation','Corporation')]
+BUSINESS_constitution = [('Private_limited','Private_limited'), ('Public_limited','Public_limited'), ('Partnership','Partnership'), ('One_person_companies','One_person_companies')]
 
 # Create your models here.
 class Vendor(models.Model):

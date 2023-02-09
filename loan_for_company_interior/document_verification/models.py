@@ -2,7 +2,7 @@ from django.db import models
 from admin_app.models import User
 from application_generation.models import Application
 
-DOCUMENT_STATUS_CHOICE = [('','')]
+DOCUMENT_STATUS_CHOICE = [('Approved','Approved'), ('Rejected','Rejected')]
 
 # Create your models here.
 class Bank(models.Model):

@@ -1,7 +1,7 @@
 from django.db import models
 from application_generation.models import Application
 
-LOAN_STATUS_CHOICE = [('','')]
+LOAN_STATUS_CHOICE = [('Late','Late'), ('Overdue','Overdue'), ('Default','Default')]
 
 # Create your models here.
 class Loan(models.Model):
