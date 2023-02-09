@@ -1,5 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, AbstractBaseUser
+
+GENDER_CHOICES = [('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')]
+ROLE_CHOICES = [('Customer', 'Customer'), ('Loan Representative', 'Loan Representative'), ('Operational Head', 'Operational Head'), ('Loan Sanction Officer', 'Loan Sanction Officer'), ('Admin', 'Admin')]
 
 # Create your models here.
 class User(AbstractUser):
@@ -24,3 +27,12 @@ class User(AbstractUser):
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
+
+class Defaulter(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='Defaulters')
+    default_amount = models.FloatField(default=0, blank=True)
+    pending_since_date = models.DateField(default="2000-12-12", blank=True)
+
+    def __str__(self):
+       	return f"{self.id}"
+

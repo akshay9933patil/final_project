@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'loan_sanctioning'
 ]
 
+AUTH_USER_MODEL = 'admin_app.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
